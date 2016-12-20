@@ -134,6 +134,8 @@ public class BeaverMojo
             outputDirectory.mkdirs();
         }
 
+        project.addCompileSourceRoot(outputDirectory.getPath());
+
         List<File> definitions;
         if (grammarDefinitions == null) {
             getLog().debug("Use grammar files found in default: " + SRC_MAIN_BEAVER);

@@ -1,4 +1,4 @@
-%package "expr.eval";
+%package "edu.ecu.cs.sle.lang.expr";
 %class "ExpressionParser";
 
 %terminals NUMBER, MULT, DIV, PLUS, MINUS, LPAREN, RPAREN;
