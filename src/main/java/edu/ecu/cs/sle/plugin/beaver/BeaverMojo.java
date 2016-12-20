@@ -139,6 +139,7 @@ public class BeaverMojo
             getLog().debug("Use grammar files found in default: " + SRC_MAIN_BEAVER);
             definitions = new ArrayList<File>();
             File defaultDir = getAbsolutePath(new File(SRC_MAIN_BEAVER));
+            getLog().debug("The absolute path for the files is: " + defaultDir.getAbsolutePath());
             if (defaultDir.isDirectory()) {
                 definitions.add(defaultDir);
             }
@@ -183,7 +184,17 @@ public class BeaverMojo
     private void processDefinition(File definition) throws MojoExecutionException {
         try {
             SrcReader reader = new SrcReader(definition);
-            ParserGenerator.compile(reader, beaverOptions, new Log());
+            Log log = new Log();
+
+            getLog().debug("Processing file: " + definition.getAbsolutePath());
+
+            ParserGenerator.compile(reader, beaverOptions, log);
+
+            if (log.hasErrors()) {
+                getLog().debug("Found errors processing the file");
+            } else {
+                getLog().debug("No errors were found processing the file");
+            }
         } catch (IOException ioe) {
             throw new MojoExecutionException(ioe.getMessage());
         } catch (Parser.Exception e) {
