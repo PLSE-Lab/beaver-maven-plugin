@@ -27,6 +27,7 @@
             <plugin>
                 <artifactId>beaver-maven-plugin</artifactId>
                 <configuration>
+                    <outputDirectory>/tmp/generated-sources/beaver</outputDirectory>
                     <!--Add test params here-->
                     <!--For this, there are none: this is the "basic" test-->
                 </configuration>

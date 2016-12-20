@@ -74,7 +74,7 @@ public class BeaverMojo
     /**
      * Name of the target directory for generation of the parser.
      */
-    @Parameter
+    @Parameter(defaultValue="${project.build.directory}/generated-sources/beaver", readonly = true)
     private File outputDirectory;
 
     /**
@@ -125,6 +125,11 @@ public class BeaverMojo
     private Options beaverOptions;
 
     public void execute() throws MojoExecutionException {
+        if (outputDirectory == null) {
+            getLog().debug("The output directory is null");
+        } else {
+            getLog().debug("The output directory has a value");
+        }
         if ( !outputDirectory.exists() ) {
             outputDirectory.mkdirs();
         }
