@@ -159,6 +159,7 @@ public class BeaverMojo
         beaverOptions.terminal_names = generateTerminalNames;
         beaverOptions.export_terminals = dumpTerminalsClass;
         beaverOptions.use_switch = useSwitching;
+        beaverOptions.dest_dir = outputDirectory;
 
         // process all Beaver definitions
         for (File definition : definitions) {
