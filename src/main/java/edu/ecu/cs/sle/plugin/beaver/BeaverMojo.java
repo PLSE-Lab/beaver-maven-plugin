@@ -24,6 +24,7 @@ import beaver.comp.util.Log;
 import beaver.spec.Grammar;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
@@ -41,7 +42,7 @@ import java.util.List;
  *
  * @author Mark Hills (mhills@acm.org)
  */
-@Mojo( name="generate" )
+@Mojo( name="generate", defaultPhase = LifecyclePhase.GENERATE_SOURCES)
 public class BeaverMojo
     extends AbstractMojo
 {
@@ -74,7 +75,7 @@ public class BeaverMojo
     /**
      * Name of the target directory for generation of the parser.
      */
-    @Parameter(defaultValue="${project.build.directory}/generated-sources/beaver", readonly = true)
+    @Parameter
     private File outputDirectory;
 
     /**
@@ -125,15 +126,7 @@ public class BeaverMojo
     private Options beaverOptions;
 
     public void execute() throws MojoExecutionException {
-        if (outputDirectory == null) {
-            getLog().debug("The output directory is null");
-        } else {
-            getLog().debug("The output directory has a value");
-        }
-        if ( !outputDirectory.exists() ) {
-            outputDirectory.mkdirs();
-        }
-
+        this.outputDirectory = getAbsolutePath(this.outputDirectory);
         project.addCompileSourceRoot(outputDirectory.getPath());
 
         List<File> definitions;
