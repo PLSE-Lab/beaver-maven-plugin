@@ -27,7 +27,9 @@
             <plugin>
                 <artifactId>beaver-maven-plugin</artifactId>
                 <configuration>
-                    <grammarDefinitions>src/test/resources/unit/standard-options-test/src/main/beaver/example.grammar</grammarDefinitions>
+                    <grammarDefinitions>
+                        <param>src/test/resources/unit/standard-options-test/src/main/beaver/example.grammar</param>
+                    </grammarDefinitions>
                     <outputDirectory>target/generated-sources</outputDirectory>
                     <!--Add test params here-->
                     <!--For this, there are none: this is the "basic" test-->
