@@ -1,10 +1,12 @@
 # Beaver Maven Plugin
 
+[![Build Status](https://travis-ci.org/ecu-pase-lab/beaver-maven-plugin.svg?branch=master)](https://travis-ci.org/ecu-pase-lab/beaver-maven-plugin)
+
 This plugin allows Beaver to be integrated into a Maven build. Beaver grammar definition files
 are included in a `beaver` language directory, with grammars generated in a `generated-sources`
 directory under target.
 
-# Adding the Beaver Plugin Repository
+## Adding the Beaver Plugin Repository
 
 Currently the plugin is still under development so it is not yet on Maven central. To add
 the repository for use in your own `pom.xml` file, add the following repository:
@@ -37,7 +39,7 @@ add the plugin as a dependency:
 </dependencies>
 ```
 
-# Using the Plugin
+## Using the Plugin
 
 To use the plugin, the following should be added to your `pom.xml` file as part of the
 `build` configuration:
