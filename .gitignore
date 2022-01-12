@@ -71,3 +71,6 @@ fabric.properties
 
 # Mac temp files
 .DS_Store
+
+# Settings (private info)
+settings.xml
