@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2017 ECU Program Analysis and Software Engineering Lab
+ * Copyright (c) 2022 ECU Programming Languages and Software Engineering Lab
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package edu.ecu.cs.pase.plugin.beaver;
+package edu.ecu.cs.plse.plugin.beaver;
 
 import beaver.Parser;
 import beaver.comp.ParserGenerator;
