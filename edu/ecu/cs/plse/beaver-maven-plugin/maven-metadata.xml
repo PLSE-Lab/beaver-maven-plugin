@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-  <groupId>edu.ecu.cs.pase</groupId>
+  <groupId>edu.ecu.cs.plse</groupId>
   <artifactId>beaver-maven-plugin</artifactId>
   <versioning>
-    <latest>1.0-SNAPSHOT</latest>
+    <latest>0.0.1-SNAPSHOT</latest>
     <versions>
-      <version>1.0-SNAPSHOT</version>
+      <version>0.0.1-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20170103181136</lastUpdated>
+    <lastUpdated>20220112220007</lastUpdated>
   </versioning>
 </metadata>
